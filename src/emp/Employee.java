@@ -16,6 +16,6 @@ public class Employee {
 	
 	void raiseSalary() {
 		this.salary = this.salary * 1.2 ;
-		System.out.println("Hey " + this.name + " , Youe raised salary is : " + this.salary );
+		System.out.println("Hey " + this.name + ", Your raised salary is : " + this.salary );
 	}
 }

@@ -12,6 +12,12 @@ public class VerifyTree {
 		appleTree.grow();
 		appleTree.displayTallerTree();
 		appleTree.displayLargerGirthTree();
+		
+		System.out.println(oakTree.getHeightOfTree());
+		System.out.println(appleTree.getTrunkDiameterInches());
+		appleTree.setHeightOfTree(55);
+		System.out.println(appleTree.getHeightOfTree());
+		appleTree.grow();
 
 	}
 

@@ -3,7 +3,7 @@ package polymorphismRefactored;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.concurrent.locks.Condition;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
@@ -13,7 +13,11 @@ public class ConditionArrayList extends ArrayList<Integer>{
 	private Predicate<Integer> condition;
 	
 	public ConditionArrayList(Predicate<Integer> predicate, Integer... nums) {
-		super(Arrays.stream(nums).filter(predicate).collect(Collectors.toList()));
+		super(new ConditionArrayList(predicate, Arrays.asList(nums)));
+	}
+	
+	public ConditionArrayList(Predicate<Integer> predicate , List<Integer> arrayList) {
+		super(arrayList.stream().filter(predicate).collect(Collectors.toList()));
 		this.condition = predicate;
 	}
 	

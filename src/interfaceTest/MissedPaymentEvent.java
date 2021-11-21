@@ -1,21 +1,11 @@
 package interfaceTest;
 
-import java.sql.Timestamp;
-
-public class MissedPaymentEvent implements Event{
-
-	private Long createdTimeStamp;
-	private String id;
+public class MissedPaymentEvent extends AbstractEvent{
 	
 	public MissedPaymentEvent(String id) {
-		this.createdTimeStamp = new Timestamp(System.currentTimeMillis()).getTime();
-		this.id = id;
+		super(id);
 	}
 	
-	@Override
-	public Long getTimeStamp() {		
-		return this.createdTimeStamp;
-	}
 	@Override
 	public void process() {
 		System.out.println("Customer " + id + " missed their payment." + "Sending a bill to the customer.");
